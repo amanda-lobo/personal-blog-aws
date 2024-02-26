@@ -9,7 +9,7 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: 'https://localhost:3000/',
+      url: 'https://personal-blog-aws.onrender.com/',
     },
   ],
 };
