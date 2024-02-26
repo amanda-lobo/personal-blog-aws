@@ -7,13 +7,6 @@ const postsController = require('./src/controller/postsController');
 const themeController = require('./src/controller/themeController');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./swagger/index');
-const cors = require('cors');
-
-const app = express();
-
-const corsOptions = {
-  origin: '*'
-};
 
 app.use(cors(corsOptions));
 app.use(express.json());
