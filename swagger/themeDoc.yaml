@@ -1,0 +1,103 @@
+paths:
+  /themes:
+    post:
+      summary: Create a new theme
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+      responses:
+        '201':
+          description: Theme successfully created!
+        '400':
+          description: The description is mandatory
+        '500':
+          description: Error creating the theme
+
+    get:
+      summary: List all themes
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of themes successfully recovered
+        '500':
+          description: Error when searching for themes
+
+  /themes/{themeId}:
+    get:
+      summary: Get details of a specific topic
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: themeId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Theme details successfully retrieved
+        '404':
+          description: Topic not found
+        '500':
+          description: Error when searching for the topic
+
+    put:
+      summary: Update an existing theme
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: themeId
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+      responses:
+        '200':
+          description: Theme successfully updated
+        '404':
+          description: Topic not found
+        '500':
+          description: Error updating the theme
+
+    delete:
+      summary: Exclui um tema
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: themeId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Theme successfully deleted
+        '404':
+          description: Topic not found
+        '500':
+          description: Error deleting theme
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
