@@ -8,15 +8,11 @@ paths:
         required: true
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PostCreate'
       responses:
         '201':
           description: Post created successfully
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/Post'
         '401':
           description: Not authorized
         '500':
@@ -34,8 +30,6 @@ paths:
             application/json:
               schema:
                 type: array
-                items:
-                  $ref: '#/components/schemas/Post'
         '401':
           description: Not authorized
         '500':
@@ -57,8 +51,6 @@ paths:
           description: Post details
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/Post'
         '401':
           description: Not authorized
         '404':
@@ -79,8 +71,6 @@ paths:
         required: true
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PostUpdate'
       responses:
         '200':
           description: Post successfully updated
