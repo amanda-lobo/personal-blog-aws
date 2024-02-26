@@ -113,33 +113,6 @@ paths:
 
 components:
   schemas:
-    PostCreate:
-      type: object
-      required:
-        - title
-        - text
-        - userId
-        - themeId
-      properties:
-        title:
-          type: string
-        text:
-          type: string
-        userId:
-          type: integer
-        themeId:
-          type: integer
-
-    PostUpdate:
-      type: object
-      properties:
-        title:
-          type: string
-        text:
-          type: string
-        themeId:
-          type: integer
-
     Post:
       type: object
       properties:

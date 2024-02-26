@@ -96,6 +96,18 @@ paths:
           description: Error deleting theme
 
 components:
+  schemas:
+    Theme:
+      type: object
+      properties:
+        themeId:
+          type: integer
+          description: The unique identifier for a theme.
+        description:
+          type: string
+          description: The description of the theme.
+          minLength: 3
+          maxLength: 100
   securitySchemes:
     bearerAuth:
       type: http
