@@ -8,6 +8,8 @@ const themeController = require('./src/controller/themeController');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./swagger/index');
 
+const app = express();
+
 app.use(express.json());
 
 app.use(userController);
